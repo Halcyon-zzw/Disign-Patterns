@@ -1,4 +1,6 @@
-package com.zhuzw.demo1;
+package com.zhuzw.demo1.static_proxy;
+
+import com.zhuzw.demo1.Moveable;
 
 /**
  * 静态日志代理
@@ -7,10 +9,10 @@ package com.zhuzw.demo1;
  * @Date: 2019/8/9 14:11
  * @Version: 1.0
  */
-public class CarLogProxt implements Moveable{
+public class CarLogProxy implements Moveable {
     private Moveable car;
 
-    public CarLogProxt(Moveable car) {
+    public CarLogProxy(Moveable car) {
         this.car = car;
     }
 

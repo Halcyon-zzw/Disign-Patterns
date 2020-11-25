@@ -1,7 +1,10 @@
 package com.zhuzw.demo1.dynamic;
 
+import com.zhuzw.demo1.Moveable;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**
  * dynamic proxy 时间处理器
@@ -16,6 +19,18 @@ public class TimeHander implements InvocationHandler {
 
     public TimeHander(Object target) {
         this.target = target;
+    }
+
+    public Object build() {
+        /**
+         * loader: 类加载器
+         * interfaces: 实现的接口
+         * hander: 处理器
+         */
+        Class clazz = target.getClass();
+        return Proxy.newProxyInstance(clazz.getClassLoader(),
+                clazz.getInterfaces(),
+                this);
     }
 
     /**

@@ -2,3 +2,4 @@
 production/
 *.class
 *.iml
+*.kotlin_module

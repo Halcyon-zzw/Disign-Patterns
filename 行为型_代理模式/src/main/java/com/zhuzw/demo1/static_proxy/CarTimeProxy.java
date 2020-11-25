@@ -1,4 +1,7 @@
-package com.zhuzw.demo1;
+package com.zhuzw.demo1.static_proxy;
+
+import com.zhuzw.demo1.Car;
+import com.zhuzw.demo1.Moveable;
 
 /**
  * 静态时间代理
@@ -7,10 +10,10 @@ package com.zhuzw.demo1;
  * @Date: 2019/8/9 14:11
  * @Version: 1.0
  */
-public class CarTimeProxt implements Moveable{
+public class CarTimeProxy implements Moveable {
     private Car car;
 
-    public CarTimeProxt(Car car) {
+    public CarTimeProxy(Car car) {
         this.car = car;
     }
 

@@ -1,9 +1,8 @@
 package com.zhuzw.demo1;
 
 import com.zhuzw.demo1.dynamic.TimeHander;
-
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Proxy;
+import com.zhuzw.demo1.static_proxy.CarLogProxy;
+import com.zhuzw.demo1.static_proxy.CarTimeProxy;
 
 /**
  * TODO
@@ -14,21 +13,27 @@ import java.lang.reflect.Proxy;
  */
 public class ProxyPatternDemo {
     public static void main(String[] args) {
-//        tesTimeAndLogProxy();
+        tesTimeAndLogStaticProxy();
         testTimeProxyDynamic();
     }
 
-    public static void tesTimeProxy() {
-        CarTimeProxt proxyCarStatic = new CarTimeProxt(new Car());
+    /**
+     * 静态代理
+     */
+    public static void tesTimeStaticProxy() {
+        CarTimeProxy proxyCarStatic = new CarTimeProxy(new Car());
         proxyCarStatic.move();
     }
 
-    public static void tesTimeAndLogProxy() {
+    /**
+     * 静态代理 - 多个代理类
+     */
+    public static void tesTimeAndLogStaticProxy() {
         Car car = new Car();
-        CarTimeProxt carTimeProxt = new CarTimeProxt(car);
-        CarLogProxt carLogProxt = new CarLogProxt(carTimeProxt);
+        CarTimeProxy carTimeProxy = new CarTimeProxy(car);
+        CarLogProxy carLogProxy = new CarLogProxy(carTimeProxy);
 
-        carLogProxt.move();
+        carLogProxy.move();
     }
 
 
@@ -42,17 +47,14 @@ public class ProxyPatternDemo {
      */
     public static void testTimeProxyDynamic() {
         Car car = new Car();
-
-        InvocationHandler invocationHandler = new TimeHander(car);
-        Class<?> clazz = car.getClass();
+//        InvocationHandler invocationHandler = new TimeHander(car);
+        TimeHander timeHander = new TimeHander(car);
         /**
          * loader: 类加载器
          * interfaces: 实现的接口
          * hander: 处理器
          */
-        Moveable moveable = (Moveable) Proxy.newProxyInstance(clazz.getClassLoader(),
-                clazz.getInterfaces(),
-                invocationHandler);
+        Moveable moveable = (Moveable) timeHander.build();
         moveable.move();
 
 
