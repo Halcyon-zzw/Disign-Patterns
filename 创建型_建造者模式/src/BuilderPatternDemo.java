@@ -1,8 +1,8 @@
 import fast_food.Meal;
 import fast_food.MealBuilder;
-import fast_food.food.ChickenBurger;
-import fast_food.food.Milk;
-import fast_food.food.VegBurger;
+import fast_food.food.burger.ChickenBurger;
+import fast_food.food.drink.Milk;
+import fast_food.food.burger.VegBurger;
 
 /**
  * 建造者模式（生成器）演示类

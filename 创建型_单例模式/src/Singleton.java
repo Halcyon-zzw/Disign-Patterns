@@ -76,41 +76,6 @@ public class Singleton {
         return instance;
     }
 
-    /**
-     * 实现五：登记式/静态内部类
-     * <p>
-     * 是否 Lazy 初始化：是
-     * 是否多线程安全：是
-     * 实现难度：一搬
-     * <p>
-     * 描述：与双校验锁功效一样，且实现更简单。对静态域使用延迟初始化
-     * 但只使用与静态域的情况，双校验锁可以在实例域需要延迟初始化时使用。
-     * 同样使用classloader机制保证初始化时只有一个线程，但跟实现3不同的是，
-     * 方式3在类加载时初始化，而这种方法，类加载时instance不一定初始化，
-     * 因为SingletonHolder没有被主动使用，只有通过显示调用getInstance()才会转载类，从而实例化。
-     * <p>
-     * 缺点：多线程不能正常工作?
-     *
-     * @return 实例对象
-     */
-    public static Singleton getInstance_5() {
-
-//        public class Singleton{
-//            private static class SingletonHolder {
-//                private static final Singleton INSTANCE = new Singleton();
-//            }
-//
-//            private Singleton(){}
-//
-//            public static final Singleton getInstance() {
-//                //调用静态类
-//                return SingletonHolder.INSTANCE;
-//            }
-//        }
-//
-        return null;
-    }
-
     public void sayHello() {
         System.out.println("hello word!");
     }
@@ -148,7 +113,24 @@ public class Singleton {
     }
 }
 
-class Singleton5 {
+/**
+ * 实现五：登记式/静态内部类
+ * <p>
+ * 是否 Lazy 初始化：是
+ * 是否多线程安全：是
+ * 实现难度：一搬
+ * <p>
+ * 描述：与双校验锁功效一样，且实现更简单。对静态域使用延迟初始化
+ * 但只使用与静态域的情况，双校验锁可以在实例域需要延迟初始化时使用。
+ * 同样使用classloader机制保证初始化时只有一个线程，但跟实现3不同的是，
+ * 方式3在类加载时初始化，而这种方法，类加载时instance不一定初始化，
+ * 因为SingletonHolder没有被主动使用，只有通过显示调用getInstance()才会转载类，从而实例化。
+ * <p>
+ * 缺点：多线程不能正常工作?
+ *
+ * @return 实例对象
+ */
+final class Singleton5 {
     private Singleton5() {
     }
 

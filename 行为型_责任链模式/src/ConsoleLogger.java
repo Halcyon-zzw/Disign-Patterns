@@ -15,6 +15,6 @@ public class ConsoleLogger extends AbstractLogger{
     @Override
     public void log(String message) {
         System.out.println("Console logger: " + message);
-        System.out.println("Level: " + level);
+//        System.out.println("Level: " + level);
     }
 }

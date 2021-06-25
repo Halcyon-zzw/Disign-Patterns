@@ -11,13 +11,14 @@ public class RedShapeDecorator extends ShapeDecorator{
         super(decoratoredShape);
     }
 
-    @Override
-    public void drow() {
-        decoratoredShape.drow();
-        setRedBorder(decoratoredShape);
-    }
+//    @Override
+//    public void drow() {
+//        decoratoredShape.drow();
+//        setRedBorder(decoratoredShape);
+//    }
 
-    private void setRedBorder(Shape decoratoredShape) {
+    @Override
+    public void setRedBorder(Shape decoratoredShape) {
         System.out.println("border color: red");
     }
 }

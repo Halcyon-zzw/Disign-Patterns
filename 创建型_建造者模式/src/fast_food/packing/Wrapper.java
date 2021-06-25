@@ -1,7 +1,5 @@
 package fast_food.packing;
 
-import fast_food.Packing;
-
 /**
  * 包装纸
  */

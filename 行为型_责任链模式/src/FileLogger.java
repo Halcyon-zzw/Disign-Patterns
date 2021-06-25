@@ -15,6 +15,6 @@ public class FileLogger extends AbstractLogger {
     @Override
     public void log(String message) {
         System.out.println("File logger: " + message);
-        System.out.println("Level: " + level);
+//        System.out.println("Level: " + level);
     }
 }

@@ -13,7 +13,7 @@ import java.util.Map;
  * @Version: 1.0
  */
 public class ServiceCache {
-    private Map<String, Service> serviceMap = new HashMap<>();
+    private Map<String, Service> serviceMap = new HashMap<String, Service>();
 
     public Service getService(String serviceName) {
         return serviceMap.get(serviceName);

@@ -28,6 +28,6 @@ public class ShapeCache {
         //找到正确原型
         Shape shape = shapeHashMap.get(id);
         //委托复制实例的方法生成新实例
-        return (Shape) shape.clone();
+        return shape.clone();
     }
 }

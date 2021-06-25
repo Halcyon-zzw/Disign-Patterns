@@ -13,7 +13,7 @@ import com.zhuzw.demo1.static_proxy.CarTimeProxy;
  */
 public class ProxyPatternDemo {
     public static void main(String[] args) {
-        tesTimeAndLogStaticProxy();
+//        tesTimeAndLogStaticProxy();
         testTimeProxyDynamic();
     }
 

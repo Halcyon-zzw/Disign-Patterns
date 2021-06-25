@@ -1,5 +1,7 @@
 package fast_food;
 
+import fast_food.food.Item;
+
 import java.util.ArrayList;
 import java.util.List;
 

@@ -9,10 +9,11 @@ public abstract class Shape implements Cloneable {
 
     //实现 复制现有实例 来生成新实例方法
     @Override
-    public Object clone() {
-        Object object = null;
+    public Shape clone() {
+        Shape object = null;
         try {
-            object = super.clone();
+            object = (Shape) super.clone();
+            //如果存在复杂类型（对象），需要分别克隆
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }

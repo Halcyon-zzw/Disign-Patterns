@@ -14,6 +14,6 @@ public class ErrorLogger extends AbstractLogger {
     @Override
     public void log(String message) {
         System.out.println("Error logger: " + message);
-        System.out.println("Level: " + level);
+//        System.out.println("Level: " + level);
     }
 }

@@ -46,7 +46,7 @@ public class TimeHander implements InvocationHandler {
         long startTime = System.currentTimeMillis();
         System.out.println("汽车开始行驶...");
 
-        Object object = method.invoke(target);
+        Object object = method.invoke(target, args);
 
         long endTime = System.currentTimeMillis();
         System.out.println("汽车结束行驶。");

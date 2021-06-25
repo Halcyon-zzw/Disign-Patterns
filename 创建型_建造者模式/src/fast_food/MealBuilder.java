@@ -1,10 +1,10 @@
 package fast_food;
 
-import fast_food.Meal;
-import fast_food.food.ChickenBurger;
-import fast_food.food.Coke;
-import fast_food.food.Milk;
-import fast_food.food.VegBurger;
+import fast_food.food.*;
+import fast_food.food.burger.ChickenBurger;
+import fast_food.food.burger.VegBurger;
+import fast_food.food.drink.Coke;
+import fast_food.food.drink.Milk;
 
 public class MealBuilder {
 

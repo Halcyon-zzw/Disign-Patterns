@@ -20,5 +20,8 @@ public abstract class ShapeDecorator implements Shape {
     @Override
     public void drow() {
         decoratoredShape.drow();
+        setRedBorder(decoratoredShape);
     }
+
+    protected abstract void setRedBorder(Shape decoratoredShape);
 }
